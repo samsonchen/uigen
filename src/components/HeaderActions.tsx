@@ -96,10 +96,10 @@ export function HeaderActions({ user, projectId }: HeaderActionsProps) {
     return (
       <>
         <div className="flex gap-2">
-          <Button variant="outline" className="h-8" onClick={handleSignInClick}>
+          <Button variant="outline" className="h-8 border-gray-500 text-white bg-transparent hover:bg-white/10 hover:text-white" onClick={handleSignInClick}>
             Sign In
           </Button>
-          <Button className="h-8" onClick={handleSignUpClick}>
+          <Button className="h-8 bg-[#FF9900] text-[#0F1111] font-semibold hover:bg-[#FFAD33] border-none" onClick={handleSignUpClick}>
             Sign Up
           </Button>
         </div>
@@ -117,7 +117,7 @@ export function HeaderActions({ user, projectId }: HeaderActionsProps) {
       {!initialLoading && (
         <Popover open={projectsOpen} onOpenChange={setProjectsOpen}>
           <PopoverTrigger asChild>
-            <Button variant="outline" className="h-8 gap-2" role="combobox">
+            <Button variant="outline" className="h-8 gap-2 border-gray-500 text-white bg-transparent hover:bg-white/10 hover:text-white" role="combobox">
               <FolderOpen className="h-4 w-4" />
               {currentProject ? currentProject.name : "Select Project"}
               <ChevronDown className="h-3 w-3 opacity-50" />
@@ -155,7 +155,7 @@ export function HeaderActions({ user, projectId }: HeaderActionsProps) {
         </Popover>
       )}
 
-      <Button className="flex items-center gap-2 h-8" onClick={handleNewDesign}>
+      <Button className="flex items-center gap-2 h-8 bg-[#FF9900] text-[#0F1111] font-semibold hover:bg-[#FFAD33] border-none" onClick={handleNewDesign}>
         <Plus className="h-4 w-4" />
         New Design
       </Button>
@@ -163,7 +163,7 @@ export function HeaderActions({ user, projectId }: HeaderActionsProps) {
       <Button
         variant="ghost"
         size="icon"
-        className="h-8 w-8"
+        className="h-8 w-8 text-white hover:bg-white/10 hover:text-white"
         onClick={handleSignOut}
         title="Sign out"
       >

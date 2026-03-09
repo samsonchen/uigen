@@ -15,8 +15,8 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
   if (messages.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-full px-4 text-center">
-        <div className="flex items-center justify-center w-14 h-14 rounded-2xl mb-4 shadow-sm" style={{ background: "#FFF2F0" }}>
-          <Bot className="h-7 w-7" style={{ color: "#EE4D2D" }} />
+        <div className="flex items-center justify-center w-14 h-14 rounded-2xl mb-4 shadow-sm" style={{ background: "#F0F2F2" }}>
+          <Bot className="h-7 w-7" style={{ color: "#FF9900" }} />
         </div>
         <p className="text-neutral-900 font-semibold text-lg mb-2">Start a conversation to generate React components</p>
         <p className="text-neutral-500 text-sm max-w-sm">I can help you create buttons, forms, cards, and more</p>
@@ -54,7 +54,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
                     ? "text-white shadow-sm"
                     : "bg-white text-neutral-900 border border-neutral-200 shadow-sm"
                 )}
-                style={message.role === "user" ? { background: "#EE4D2D" } : undefined}
+                style={message.role === "user" ? { background: "#232F3E" } : undefined}
               >
                 <div className="text-sm">
                   {message.parts ? (
@@ -129,8 +129,8 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
             
             {message.role === "user" && (
               <div className="flex-shrink-0">
-                <div className="w-9 h-9 rounded-lg shadow-sm flex items-center justify-center" style={{ background: "#EE4D2D" }}>
-                  <User className="h-4.5 w-4.5 text-white" />
+                <div className="w-9 h-9 rounded-lg shadow-sm flex items-center justify-center" style={{ background: "#FF9900" }}>
+                  <User className="h-4.5 w-4.5 text-[#0F1111]" />
                 </div>
               </div>
             )}

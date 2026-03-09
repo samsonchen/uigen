@@ -103,10 +103,10 @@ export function PreviewFrame() {
       return (
         <div className="h-full flex items-center justify-center p-8 bg-gray-50">
           <div className="text-center max-w-md">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ background: "#FFF2F0" }}>
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style={{ background: "#FFF8E7" }}>
               <svg
                 className="h-8 w-8"
-                style={{ color: "#EE4D2D" }}
+                style={{ color: "#FF9900" }}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
