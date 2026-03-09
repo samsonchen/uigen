@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Plus, LogOut, FolderOpen, ChevronDown } from "lucide-react";
-import { AuthDialog } from "@/components/auth/AuthDialog";
 import { signOut } from "@/actions";
 import { getProjects } from "@/actions/get-projects";
 import { createProject } from "@/actions/create-project";
@@ -39,8 +38,6 @@ interface Project {
 
 export function HeaderActions({ user, projectId }: HeaderActionsProps) {
   const router = useRouter();
-  const [authDialogOpen, setAuthDialogOpen] = useState(false);
-  const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [projects, setProjects] = useState<Project[]>([]);
   const [initialLoading, setInitialLoading] = useState(true);
@@ -69,16 +66,6 @@ export function HeaderActions({ user, projectId }: HeaderActionsProps) {
 
   const currentProject = projects.find((p) => p.id === projectId);
 
-  const handleSignInClick = () => {
-    setAuthMode("signin");
-    setAuthDialogOpen(true);
-  };
-
-  const handleSignUpClick = () => {
-    setAuthMode("signup");
-    setAuthDialogOpen(true);
-  };
-
   const handleSignOut = async () => {
     await signOut();
   };
@@ -93,23 +80,7 @@ export function HeaderActions({ user, projectId }: HeaderActionsProps) {
   };
 
   if (!user) {
-    return (
-      <>
-        <div className="flex gap-2">
-          <Button variant="outline" className="h-8 border-gray-500 text-white bg-transparent hover:bg-white/10 hover:text-white" onClick={handleSignInClick}>
-            Sign In
-          </Button>
-          <Button className="h-8 bg-[#FF9900] text-[#0F1111] font-semibold hover:bg-[#FFAD33] border-none" onClick={handleSignUpClick}>
-            Sign Up
-          </Button>
-        </div>
-        <AuthDialog
-          open={authDialogOpen}
-          onOpenChange={setAuthDialogOpen}
-          defaultMode={authMode}
-        />
-      </>
-    );
+    return null;
   }
 
   return (
